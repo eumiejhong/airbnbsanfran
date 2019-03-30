@@ -1,0 +1,39 @@
+SELECT 
+    name,
+    price,
+	neighbourhood_group
+	neighbourhood,
+	room_type,
+	number_of_reviews,
+	last_review,
+	reviews_per_month,
+	availability_365
+FROM
+    sfo_listings
+ORDER BY price DESC
+LIMIT 1;
+-- The most expensive AirBnB appears to be a Victorian House that is 7500sq ft with 4 floors and includes --
+-- a hot tub, all priced for $10,000/night. It is only available 18 days out of the 365 calendar days. --
+
+SELECT DISTINCT
+	neighbourhood,
+	number_of_reviews
+FROM
+	sfo_listings
+ORDER BY number_of_reviews DESC
+LIMIT 3;
+-- The top 3 most popular neighborhoods appear to be: Potrero Hill, Outer Richmond, and Mission according --
+-- to the number of reviews the respective neighborhoods received
+
+SELECT 
+	listing_id,
+	calender_date,
+	price,
+	available
+FROM
+	sfo_calendar
+ORDER BY price DESC
+LIMIT 5;
+
+-- According to the calendar dates, it appears that September is the cheapest time to go to San Francisco
+-- November appears to be the busiest and most expensive time to go to San Francisco. --
